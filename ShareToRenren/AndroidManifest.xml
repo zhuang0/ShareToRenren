@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="test.renren"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ShareRenrenActivity"
+            android:label="@string/app_name" >            
+        </activity>
+        
+        
+    <!-- renren sdk中的Activity -->
+		<!-- 辅助完成SSO、Oauth的Activity ，必须在AndroidManifest.xml中声明 -->
+		<activity
+			android:name="com.renren.api.connect.android.AuthorizationHelper$BlockActivity"
+			android:theme="@android:style/Theme.Dialog"></activity>
+			
+		<!-- 发布状态的Activity，如需使用一键发布状态的功能，则必须在AndroidManifest.xml中声明 -->
+		<activity android:name="com.renren.api.connect.android.status.StatusPubActivity"></activity>
+		
+		<!-- 发布照片的Activity，如需使用一键上传图片的功能，则必须在AndroidManifest.xml中声明 -->
+		<activity android:name="com.renren.api.connect.android.photos.UploadPhotoActivity"></activity>
+		
+		<!-- 创建相册的Activity，如需使用一键创建相册的功能，则必须在AndroidManifest.xml中声明 -->
+		<activity android:name="com.renren.api.connect.android.photos.CreateAlbumActivity"></activity>
+				
+	</application>
+	
+	<!-- renren sdk 需要的权限 ，必须在AndroidManifest.xml中声明 -->
+	<uses-permission android:name="android.permission.INTERNET" />
+    
+    
+
+</manifest>
